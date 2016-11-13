@@ -35,22 +35,25 @@ mysql -h `docker-machine ip | tr -d '\n'` -uroot -ppass
 ### Amazon Linux
 
 ```bash
+# install composer
 curl -sS https://getcomposer.org/installer | php
 chmod +x composer.phar
 sudo mv composer.phar /usr/local/bin/composer
  
+# install docker
 sudo yum install docker -y
 sudo service docker start
 sudo pip install -U docker-compose
 sudo usermod -aG docker ${USER}
  
+# setup project
 git clone {this repository}
 cd dc-lamp/
 cp docker-compose.example.yml docker-compose.yml
 sudo docker-compose build
 sudo docker-compose up -d
 cd migration
-compose install
+composer install
 ./vendor/bin/phinx migrate -e testing
  
 # test request by curl
