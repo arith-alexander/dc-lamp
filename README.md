@@ -3,9 +3,15 @@
 This system requires "phinx" as database migration tool, [Please install "composer"](http://qiita.com/CatCable/items/02364adacf36410f449e)
 
 ```bash
-# run docker containers
+# clone this
 git clone {this repository}
 cd {cloned directory}
+ 
+# If you have not start VM yet, you should start it.
+docker-machine start {VM name}
+eval "$(docker-machine env default)"
+ 
+# run docker containers
 cp docker-compose.example.yml docker-compose.yml
 docker-compose build
 docker-compose up -d
