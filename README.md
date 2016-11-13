@@ -1,4 +1,4 @@
-## How to use (Mac OSX)
+## How to use
 
 This system requires "phinx" as database migration tool, [Please install "composer"](http://qiita.com/CatCable/items/02364adacf36410f449e)
 
