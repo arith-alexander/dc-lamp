@@ -22,7 +22,7 @@ docker-compose up -d
 cd migration
 composer install
 ./vendor/bin/phinx init 
-/bin/cp -f migration/phinx.example.yml migration/phinx.yml
+/bin/cp -f phinx.example.yml phinx.yml
 ./vendor/bin/phinx migrate -e development
  
 # test request by curl
@@ -54,6 +54,8 @@ sudo docker-compose build
 sudo docker-compose up -d
 cd migration
 composer install
+./vendor/bin/phinx init
+/bin/cp -f phinx.example.yml phinx.yml
 ./vendor/bin/phinx migrate -e testing
  
 # test request by curl
